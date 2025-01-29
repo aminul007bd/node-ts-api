@@ -1,6 +1,11 @@
+import "./swaggerDocs"; // Import the Swagger documentation
+
 import express, { Request, Response } from "express";
 
+import blogRouter from "./routes/blogRoutes";
 import checkDbConnection from "./checkDbConnection";
+import contactRouter from "./routes/contactRoutes"; // Import contactRouter
+import jobPostRouter from "./routes/jobPostRoutes";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerOptions from "./swaggerConfig";
 import swaggerUi from "swagger-ui-express";
@@ -16,6 +21,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 
 app.use(userRouter);
+app.use(blogRouter);
+app.use(jobPostRouter);
+app.use(contactRouter); // Use contactRouter
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to node api");
@@ -31,5 +39,3 @@ async function startServer() {
 }
 
 startServer();
-
-
