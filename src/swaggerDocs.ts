@@ -20,6 +20,9 @@
  *         createdAt:
  *           type: string
  *           format: date-time
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
  *     UserRole:
  *       type: object
  *       properties:
@@ -110,6 +113,39 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/User'
+ * /users/{id}:
+ *   put:
+ *     summary: Update an existing user
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/User'
+ *     responses:
+ *       200:
+ *         description: User updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *   delete:
+ *     summary: Delete an existing user
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       204:
+ *         description: User deleted successfully
  */
 
 /**
@@ -126,6 +162,54 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/UserRole'
+ *   post:
+ *     summary: Create a new role
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/UserRole'
+ *     responses:
+ *       201:
+ *         description: Role created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/UserRole'
+ * /userRole/{id}:
+ *   put:
+ *     summary: Update an existing role
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/UserRole'
+ *     responses:
+ *       200:
+ *         description: Role updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/UserRole'
+ *   delete:
+ *     summary: Delete an existing role
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       204:
+ *         description: Role deleted successfully
  */
 
 /**
@@ -157,6 +241,39 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/JobPost'
+ * /jobPosts/{id}:
+ *   put:
+ *     summary: Update an existing job post
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/JobPost'
+ *     responses:
+ *       200:
+ *         description: Job post updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/JobPost'
+ *   delete:
+ *     summary: Delete an existing job post
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       204:
+ *         description: Job post deleted successfully
  */
 
 /**
@@ -188,6 +305,39 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Contact'
+ * /contacts/{id}:
+ *   put:
+ *     summary: Update an existing contact
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Contact'
+ *     responses:
+ *       200:
+ *         description: Contact updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Contact'
+ *   delete:
+ *     summary: Delete an existing contact
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       204:
+ *         description: Contact deleted successfully
  */
 
 /**
@@ -219,4 +369,37 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Blog'
+ * /blogs/{id}:
+ *   put:
+ *     summary: Update an existing blog
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Blog'
+ *     responses:
+ *       200:
+ *         description: Blog updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Blog'
+ *   delete:
+ *     summary: Delete an existing blog
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       204:
+ *         description: Blog deleted successfully
  */

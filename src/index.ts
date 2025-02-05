@@ -9,6 +9,7 @@ import jobPostRouter from "./routes/jobPostRoutes";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerOptions from "./swaggerConfig";
 import swaggerUi from "swagger-ui-express";
+import userRoleRouter from "./routes/userRoleRoutes";
 import userRouter from "./routes/userRoutes";
 
 const app = express();
@@ -21,9 +22,11 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 
 app.use(userRouter);
+app.use(userRoleRouter);
 app.use(blogRouter);
 app.use(jobPostRouter);
-app.use(contactRouter); // Use contactRouter
+app.use(contactRouter);
+
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to node api");
